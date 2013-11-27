@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>无标题文档</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="jquery.rating.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+<script type="text/javascript" src="jquery.rating.js"></script>
+<script type="text/javascript" src="jquery.rating.pack.js"></script>
+<script type="text/javascript" src="jquery.MetaData.js"></script>
+</head>
+<body>
+<script>
+$(function(){
+ $('.auto-submit-star').rating({
+  callback: function(value, link){
+   // 'this' is the hidden form element holding the current value
+   // 'value' is the value selected
+   // 'element' points to the link element that received the click.
+   alert(" '" + value + "'\n\nWith this callback function I can automatically submit the form with this code:\nthis.form.submit();");
+   $('.auto-submit-star').rating('readOnly',true)
+   // To submit the form automatically:
+   //this.form.submit();
+   
+   // To submit the form via ajax:
+   //$(this.form).ajaxSubmit();
+  }
+ });
+});
+</script>
+<form id="form3A">
+<div class="Clear">
+    <input class="auto-submit-star" type="radio" name="rating-1" value="1"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="2"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="3"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="4"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="5"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="6"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="7"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="8"/>
+    <input class="auto-submit-star" type="radio" name="rating-1" value="9"/>   
+    <input class="auto-submit-star" type="radio" name="rating-1" value="9"/>    
+   </div>
+</form>
+</body>
+</html>
